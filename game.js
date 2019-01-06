@@ -155,12 +155,9 @@ class Level {
 	}
 
 	isFinished() {
-		if (this.status !== null && this.finishDelay < 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+    if (this.status !== null && this.finishDelay < 0) return true;
+    return false;
+  }
 
 	actorAt(actor) {
 		if (!(actor instanceof Actor) || !actor) {
@@ -168,7 +165,7 @@ class Level {
 		}
 
 		if (!this.actors) {
-			return undefined;
+			return;
 		} else {
 			return this.actors.find(currentActor => currentActor.isIntersect(actor));
 		}
@@ -194,7 +191,7 @@ class Level {
 			for (let j = leftBorder; j < rightBorder; j++) {
 				if (this.grid[i][j]) {
 					return this.grid[i][j];
-				} else 
+				} 
 			}
 		}
 	}
@@ -311,7 +308,7 @@ class LevelParser {
 
 	actorFromSymbol(symbol) {
 	  if (!symbol) {
-      return undefined;
+      return;
     }
     return this.gameDic[symbol];
 	}
@@ -323,7 +320,7 @@ class LevelParser {
 			case '!':
 				return 'lava';
 			default:
-				return undefined;
+				return;
 		}
 	}
 
