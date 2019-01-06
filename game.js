@@ -194,9 +194,7 @@ class Level {
 			for (let j = leftBorder; j < rightBorder; j++) {
 				if (this.grid[i][j]) {
 					return this.grid[i][j];
-				} else {
-					return undefined;
-				}
+				} else 
 			}
 		}
 	}
